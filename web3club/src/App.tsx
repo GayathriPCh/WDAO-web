@@ -15,8 +15,7 @@ import {
   getDefaultConfig,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
-import { WagmiProvider } from 'wagmi';
-import { optimismSepoliaTestnet } from './pages/Sepi';
+import { WagmiProvider, ResolvedRegister } from 'wagmi';
 import {
   mainnet,
   polygon,
@@ -40,7 +39,7 @@ const queryClient = new QueryClient();
 
 const App: React.FC = () => {
   return (
-    <WagmiProvider config={config}>
+    <WagmiProvider config={config as unknown as ResolvedRegister['config']}>
     <QueryClientProvider client={queryClient}>
       <RainbowKitProvider>
         {/* Your App */}
