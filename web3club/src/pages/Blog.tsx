@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './backbutton.css'; // Import the CSS file
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 interface BlogPost {
   title: string;
@@ -8,23 +10,21 @@ interface BlogPost {
 }
 
 const Blog: React.FC = () => {
-  const blogPosts: BlogPost[] = [
-    {
-      title: 'Intro to Web3',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP4Bc0-q9wQ3EbckyqzhGyH2r-6QegBGTQ5iPZkWRIXZ3zwJTjJCqb5A_3wE3iy9bBi1w&usqp=CAU',
-      link: 'https://medium.com/@paul.simroth/what-is-web3-an-introduction-for-newcomers-f6619afbe6c3',
-    },
-    {
-      title: 'Understanding Blockchain',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0yuSTo19yVXs89SBdqgPeILv8gIT9PA47kg&s',
-      link: 'https://medium.com/qanplatform/blockchain-101-everything-you-need-to-know-about-blockchain-basics-2514213f6e9e',
-    },
-    // Add more posts as needed
-  ];
-
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
+    const fetchBlogPosts = async () => {
+      const blogPostsCollection = collection(db, 'blogPosts');
+      const blogPostsSnapshot = await getDocs(blogPostsCollection);
+      const blogPostsList = blogPostsSnapshot.docs.map(doc => doc.data() as BlogPost);
+      console.log(blogPostsList); // Log the fetched blog posts
+      setBlogPosts(blogPostsList);
+    };
+    
+
+    fetchBlogPosts();
+
     const link = document.createElement('link');
     link.href = 'https://fonts.googleapis.com/css?family=Audiowide';
     link.rel = 'stylesheet';
@@ -66,32 +66,43 @@ const Blog: React.FC = () => {
       </button>
       <h1 style={{ ...styles.header, fontFamily: "'Audiowide', sans-serif" }}>Blogs</h1>
       <div style={styles.list}>
-        {blogPosts.map((post, index) => (
-          <a 
-            key={index} 
-            href={post.link} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="blog-card"
-            style={{ 
-              ...styles.card, 
-              transform: hoveredIndex === index ? 'scale(1.05)' : 'scale(1)',
-              opacity: 0 // Initial opacity set to 0
-            }}
-            onMouseEnter={() => setHoveredIndex(index)} 
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div style={styles.imageContainer}>
-              <img src={post.imageUrl} alt={post.title} style={styles.image} />
-            </div>
-            <div style={styles.content}>
-              <h2 style={{ ...styles.title, fontFamily: "'Audiowide', sans-serif" }}>{post.title}</h2>
-            </div>
-          </a>
-        ))}
+        {blogPosts.map((post, index) => {
+          // Log each blog post's image URL
+          console.log(`Rendering blog post ${index}:`, post);
+          
+          return (
+            <a 
+              key={index} 
+              href={post.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="blog-card"
+              style={{ 
+                ...styles.card, 
+                transform: hoveredIndex === index ? 'scale(1.05)' : 'scale(1)',
+                opacity: 1 
+              }}
+              onMouseEnter={() => setHoveredIndex(index)} 
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div style={styles.imageContainer}>
+                <img 
+                  src={post.imageUrl} 
+                  alt={post.title} 
+                  style={styles.image}
+                  onError={() => console.error(`Failed to load image from ${post.imageUrl}`)} 
+                />
+              </div>
+              <div style={styles.content}>
+                <h2 style={{ ...styles.title, fontFamily: "'Audiowide', sans-serif" }}>{post.title}</h2>
+              </div>
+            </a>
+          );
+        })}
       </div>
     </div>
   );
+  
 };
 
 const styles = {

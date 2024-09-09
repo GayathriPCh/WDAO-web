@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { css, keyframes } from '@emotion/react';
 import backImage from './back.png'; // Import the back image
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase"; // Ensure correct firebase config import
 
 const neonBlink = keyframes`
   from {
@@ -20,41 +22,34 @@ const ProjectShowcase: React.FC = () => {
     document.head.appendChild(link);
   }, []);
 
-  const projects = [
-    {
-      title: 'Turbo-Eth',
-      description: 'Description of project 1',
-      imageUrl: 'https://repository-images.githubusercontent.com/583595113/470ebfa7-e25a-43a6-bc6f-c6f119149e33',
-      link: 'https://github.com/turbo-eth/template-web3-app',
-    },
-    {
-      title: 'Open-source nft marketplace',
-      description: 'Description of project 2',
-      imageUrl: 'https://raw.githubusercontent.com/yessGlory17/nft-marketplace/main/docs/images/home.png',
-      link: 'https://github.com/yessGlory17/nft-marketplace',
-    },
-    {
-      title: 'Project 3',
-      description: 'Description of project 3',
-      imageUrl: 'https://opengraph.githubassets.com/f7ccc84f0e3e1b8d4340e5091487c0373b87da34d702faf20eeaffe73f93969b/microgift/web3-developer-solana-evm-etc',
-      link: 'https://github.com/microgift/web3-developer-solana-evm-etc',
-    },
-    {
-      title: 'Project 4',
-      description: 'Description of project 4',
-      imageUrl: 'https://repository-images.githubusercontent.com/127246132/4bab4d45-efde-4f9d-ad7c-6bdfd5c5776d',
-      link: 'https://github.com/WalletConnect/web3modal',
-    },
-    {
-      title: 'Open-source nft marketplace',
-      description: 'Description of project 2',
-      imageUrl: 'https://raw.githubusercontent.com/yessGlory17/nft-marketplace/main/docs/images/home.png',
-      link: 'https://github.com/yessGlory17/nft-marketplace',
-    },
-    // Add more projects as needed
-  ];
+  interface Project {
+    title: string;
+    description: string;
+    imageUrl: string;
+    link: string;
+  }
 
+  const [projects, setProjects] = useState<Project[]>([]);
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const projectCollection = collection(db, 'projects'); // Adjust the collection name as per your Firestore structure
+      const projectSnapshot = await getDocs(projectCollection);
+      const projectList = projectSnapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+          title: data.title,
+          description: data.description,
+          imageUrl: data.imageUrl,
+          link: data.link,
+        } as Project;
+      });
+      setProjects(projectList);
+    };
+
+    fetchProjects();
+  }, []);
 
   return (
     <div css={styles.container}>
@@ -164,8 +159,7 @@ const styles = {
       backgroundColor: '#9b34eb', // Adjusted hover color
       color: '#000000', // Black text color on hover
     },
-}),
-
+  }),
 };
 
 export default ProjectShowcase;

@@ -1,55 +1,39 @@
 /** @jsxImportSource @emotion/react */
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
-import backImage from './back.png'; // Import the back image
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase';  // Import Firestore instance
+import backImage from './back.png';
 
-const News: React.FC = () => {
-  // Define your news data
-  const news = [
-    {
-      title: 'ODHACK 4.0 community call',
-      description: 'W3CG Labs',
-      imageUrl: 'https://pbs.twimg.com/media/GO675WAW4AkNeha?format=jpg&name=900x900',
-      link: 'https://x.com/OnlyDust_com/status/1796580000092578196',
-    },
-    {
-      title: 'Hack ON Blocks Hackathon',
-      description: 'Hyderabad DAO',
-      imageUrl: 'https://pbs.twimg.com/media/GOV1fGhWsAAfj3t?format=jpg&name=900x900',
-      link: 'https://x.com/hyderabaddao/status/1793969206624698613?t=XzpesqOVSn4BjpsiNPpEFQ&s=19',
-    },
-    {
-        title: 'MetaSchool x Mantra chain',
-        description: 'metaschool',
-        imageUrl: 'https://pbs.twimg.com/media/GOV-TTcW4AAsmMl?format=jpg&name=900x900',
-        link: 'https://x.com/0xmetaschool/status/1793978952886648853',
-      },
-      {
-        title: 'Aethir Checker nodes Airdrops',
-        description: 'Aethir',
-        imageUrl: 'https://pbs.twimg.com/card_img/1796170237449994240/vYOYqD9A?format=jpg&name=900x900',
-        link: 'https://x.com/AethirCloud/status/1796180443999416615',
-      },
-      {
-        title: 'Aethir pre launch day news',
-        description: 'Aethir',
-        imageUrl: 'https://pbs.twimg.com/card_img/1797345741154766848/rm7wq-1f?format=png&name=900x900',
-        link: 'https://x.com/AethirCloud/status/1796118820488183877',
-      },
-      {
-        title: 'Onchain summer Buildathon',
-        description: 'Devfolio',
-        imageUrl: 'https://pbs.twimg.com/card_img/1796132343176212480/Rsdbp9ag?format=jpg&name=900x900',
-        link: 'https://x.com/OnlyDust_com/status/1796580000092578196',
-      },
-      {
-        title: 'Solana Floor learn Solana guide',
-        description: 'Solana',
-        imageUrl: 'https://pbs.twimg.com/card_img/1796232087617552387/w-kJuNSX?format=jpg&name=900x900',
-        link: 'https://x.com/solana/status/1797130268534608267',
-      },
-    // Add more news items as needed
-  ];
+const News = () => {
+  interface NewsItem {
+    title: string;
+    description: string;
+    link: string;
+    imageUrl: string;
+  }
+  
+  const [news, setNews] = useState<NewsItem[]>([]);  // State to store fetched news data
+
+  useEffect(() => {
+    // Fetch data from Firestore
+    const fetchNews = async () => {
+      const newsCollection = collection(db, 'news');
+      const newsSnapshot = await getDocs(newsCollection);
+      const newsList = newsSnapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+          title: data.title,
+          description: data.description,
+          link: data.link,
+          imageUrl: data.imageUrl,
+        } as NewsItem;
+      });
+      setNews(newsList);
+    };
+    
+    fetchNews();
+  }, []);
 
   return (
     <div css={styles.container}>
