@@ -101,10 +101,16 @@ const styles: { [key: string]: CSSProperties } = {
     top: '20px',
     left: '20px',
     cursor: 'pointer',
+    padding: '10px',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    borderRadius: '5px',
+    border: 'none',
+    color: '#fff',
+    fontSize: '14px',
   },
   heading: {
     marginBottom: '20px',
-    fontSize: '3cm',
+    fontSize: '2rem',
     fontFamily: "'Audiowide', sans-serif",
     color: '#ffffff',
     textShadow: '0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #aa00aa, 0 0 40px #aa00aa, 0 0 50px #aa00aa, 0 0 60px #aa00aa, 0 0 70px #aa00aa',
@@ -113,12 +119,12 @@ const styles: { [key: string]: CSSProperties } = {
   },
   eventTitle: {
     fontFamily: "'Audiowide', sans-serif",
-    fontSize: '24px',
+    fontSize: '20px',
     marginBottom: '5px',
   },
   eventDescription: {
     fontFamily: "'Audiowide', sans-serif",
-    fontSize: '16px',
+    fontSize: '14px',
     marginBottom: '10px',
   },
   eventsContainer: {
@@ -127,10 +133,12 @@ const styles: { [key: string]: CSSProperties } = {
     alignItems: 'center',
   },
   event: {
-    width: '80%',
+    width: '100%',
+    maxWidth: '600px',
     marginBottom: '20px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     display: 'flex',
+    flexDirection: 'column', // Stack content vertically on mobile
     alignItems: 'center',
     cursor: 'pointer',
     opacity: 1,
@@ -140,7 +148,7 @@ const styles: { [key: string]: CSSProperties } = {
     overflow: 'hidden',
   },
   imageContainer: {
-    flex: 1,
+    width: '100%',
   },
   image: {
     width: '100%',
@@ -148,8 +156,8 @@ const styles: { [key: string]: CSSProperties } = {
     objectFit: 'cover',
   },
   content: {
-    flex: 1,
     padding: '20px',
+    textAlign: 'center', // Center text on mobile
   },
   button: {
     fontFamily: "'Audiowide', sans-serif",
@@ -160,7 +168,37 @@ const styles: { [key: string]: CSSProperties } = {
     borderRadius: '5px',
     cursor: 'pointer',
     transition: 'background-color 0.3s ease-in-out',
+    marginTop: '10px',
   },
 };
+
+// Add media queries to adjust styles for mobile screens
+const mediaStyles = `
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 0.1rem;
+  }
+  .heading {
+    font-size: 1.5rem;
+  }
+  .event {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+  .backButton {
+    opacity: 0;
+  }
+  .button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+`;
+
+// Append media styles to the document head
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = mediaStyles;
+document.head.appendChild(styleSheet);
 
 export default EventsCalendar;

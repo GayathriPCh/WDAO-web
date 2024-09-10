@@ -95,6 +95,9 @@ const styles = {
   container: css({
     padding: '2rem',
     fontFamily: "'Audiowide', sans-serif", // Apply the Audiowide font to the entire container
+    '@media (max-width: 768px)': {
+      padding: '1rem', // Reduce padding on mobile
+    },
   }),
   heading: css({
     fontSize: '6rem', // Bigger font size
@@ -103,6 +106,9 @@ const styles = {
     color: '#7900f2', // Neon burple color
     textShadow: '0 0 5px #a706ff', // Neon burple glow
     animation: `${neonBlink} 1s infinite alternate`, // Blinking effect
+    '@media (max-width: 768px)': {
+      fontSize: '3rem', // Adjust font size for mobile
+    },
   }),
   backButton: (isHovered: boolean) => css({
     width: '70px',
@@ -110,6 +116,10 @@ const styles = {
     cursor: 'pointer',
     transition: 'transform 0.3s ease-in-out',
     transform: isHovered ? 'scale(1.2)' : 'scale(1)',
+    '@media (max-width: 768px)': {
+      width: '50px', // Reduce size for mobile
+      height: '50px',
+    },
   }),
   submitCard: css({
     display: 'block',
@@ -123,11 +133,18 @@ const styles = {
     cursor: 'pointer',
     transition: 'background-image 0.3s',
     textDecoration: 'none',
+    '@media (max-width: 768px)': {
+      fontSize: '0.9rem', // Adjust font size for mobile
+    },
   }),
   grid: css({
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
     gridGap: '20px',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: '1fr', // Make single-column layout on mobile
+      gridGap: '10px', // Reduce gap on mobile
+    },
   }),
   card: css({
     display: 'flex',
@@ -142,6 +159,9 @@ const styles = {
     height: 'auto',
     marginBottom: '20px',
     borderRadius: '10px',
+    '@media (max-width: 768px)': {
+      marginBottom: '10px', // Reduce bottom margin on mobile
+    },
   }),
   cardContent: css({
     color: '#fff',
@@ -158,6 +178,9 @@ const styles = {
       backgroundImage: 'none', // Remove background image on hover
       backgroundColor: '#9b34eb', // Adjusted hover color
       color: '#000000', // Black text color on hover
+    },
+    '@media (max-width: 768px)': {
+      padding: '0.4rem 0.8rem', // Adjust padding for mobile
     },
   }),
 };
