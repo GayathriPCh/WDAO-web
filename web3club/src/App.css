@@ -66,6 +66,9 @@
       font-size: 16px;
     }
   }
+  .contentWrapper {
+    padding-top: 60px; /* Adjust based on the height of your Navbar */
+  }
   
   /* Example Desktop Styles (default) */
   @media (min-width: 1025px) {

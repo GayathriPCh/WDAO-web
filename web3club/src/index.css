@@ -12,6 +12,14 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page-content {
+  padding-top: 60px; /* Adjust to match Navbar height */
+}
 
 @media (prefers-color-scheme: light) {
   :root {
