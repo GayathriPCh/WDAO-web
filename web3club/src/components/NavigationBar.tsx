@@ -35,7 +35,7 @@ const NavigationBar: React.FC = () => {
             <Nav.Link as={Link} to="/project-showcase" className={styles.navLink}>Project Showcase</Nav.Link>
             <Nav.Link as={Link} to="/news" className={styles.navLink}>News</Nav.Link>
             <Nav.Link as={Link} to="/mint-nft" className={styles.navLink}>Mint NFT</Nav.Link>
-            <Nav.Link as={Link} to="/reviews" className={styles.navLink}>Reviews</Nav.Link>
+            <Nav.Link as={Link} to="/reviews" className={styles.navLink}>About Us</Nav.Link>
             <Nav.Link as={Link} to="/digiboard" className={styles.navLink}>Digiboard</Nav.Link>
             <Nav.Link as={Link} to="/stress-test" className={styles.stressButton}>
               <img src={stressIcon} alt="Stress Icon" className={styles.stressIcon} />

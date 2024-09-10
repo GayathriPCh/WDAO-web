@@ -6,7 +6,7 @@ import EventsCalendar from './pages/EventsCalendar';
 import ProjectShowcase from './pages/ProjectShowcase';
 import News from './pages/News';
 import MintNFT from './pages/MintNFT';
-import Reviews from './pages/Reviews';
+import AboutUs from './pages/AboutUs';
 import Digiboard from './pages/Digiboard';
 import NavigationBar from './components/NavigationBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -43,7 +43,7 @@ const App: React.FC = () => {
                   <Route path="/project-showcase" element={<ProjectShowcase />} />
                   <Route path="/news" element={<News />} />
                   <Route path="/mint-nft" element={<MintNFT />} />
-                  <Route path="/reviews" element={<Reviews />} />
+                  <Route path="/reviews" element={<AboutUs />} />
                   <Route path="/digiboard" element={<Digiboard />} />
                 </Routes>
               </div>
