@@ -35,7 +35,7 @@ const WhatsInit: React.FC = () => {
     <div style={styles.container}>
       <div style={styles.overlay}>
         <div style={styles.contentWrapper}>
-          <div style={styles.imageBottomLeft}>
+          <div style={styles.imageBottomLeft} className="image-bottom-left">
             <img src={whatsImage} alt="What's in it" style={{ ...styles.image, ...styles.floatAnimation }} />
           </div>
           <div style={styles.gradientBox}>
@@ -44,7 +44,7 @@ const WhatsInit: React.FC = () => {
               Get access to exclusive content, participate in community events, and much more.
             </p>
           </div>
-          <div style={styles.imageBottomRight}>
+          <div style={styles.imageBottomRight} className="image-bottom-right">
             <img src={whatsImage} alt="What's in it" style={{ ...styles.image, ...styles.floatAnimation }} />
           </div>
         </div>
@@ -62,6 +62,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: 'Arial, sans-serif',
+    padding: '0 1rem', // Add padding to ensure content isn't too close to edges
   } as React.CSSProperties,
   overlay: {
     position: 'relative',
@@ -79,7 +80,9 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    zIndex: 1, // Ensure content is above the overlay
+    zIndex: 1,
+    flexDirection: 'column', // Stack elements vertically on smaller screens
+    textAlign: 'center', // Center align text on smaller screens
   } as React.CSSProperties,
   gradientBox: {
     background: 'transparent',
@@ -87,13 +90,14 @@ const styles = {
     padding: '3rem',
     boxShadow: '0px 8px 32px rgba(0, 0, 0, 0.3)',
     color: '#ffffff',
-    width: '45%',
-    height: '35rem',
+    width: '90%',
+    maxWidth: '600px', // Limit width on larger screens
+    height: 'auto', // Adjust height automatically
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: '2rem',
+    margin: '0',
     textAlign: 'center',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.18)',
@@ -102,19 +106,21 @@ const styles = {
   } as React.CSSProperties,
   imageBottomLeft: {
     position: 'absolute',
-    bottom: 0,
-    left: 0,
+    bottom: '0',
+    left: '0',
     zIndex: 0,
     width: '30%', // Adjust size as needed
     height: 'auto',
+    display: 'block', // Default to visible
   } as React.CSSProperties,
   imageBottomRight: {
     position: 'absolute',
-    bottom: 0,
-    right: 0,
+    bottom: '0',
+    right: '0',
     zIndex: 0,
     width: '30%', // Adjust size as needed
     height: 'auto',
+    display: 'block', // Default to visible
   } as React.CSSProperties,
   image: {
     width: '100%',
@@ -122,27 +128,62 @@ const styles = {
     objectFit: 'cover',
   } as React.CSSProperties,
   title: {
-    fontSize: '4rem',
+    fontSize: '3rem',
     fontWeight: 'bold',
     marginBottom: '1rem',
-    transform: 'rotate(-5deg)',
+    transform: 'rotate(-3deg)',
     fontFamily: 'Andromeda',
-    textTransform: 'uppercase', // Ensure text is uppercase
+    textTransform: 'uppercase',
     background: '-webkit-linear-gradient(#21ff25, #8c21ff)',
     '-webkit-background-clip': 'text',
     '-webkit-text-fill-color': 'transparent',
   } as React.CSSProperties,
   content: {
     color: '#21ff25',
-    fontSize: '1.9rem',
+    fontSize: '1.5rem',
     lineHeight: '1.5',
-    transform: 'rotate(-5deg)',
-    fontFamily: 'Futuristic Shore, sans-serif', // Normal font for content
-    textTransform: 'uppercase', // Capital letters for content
+    transform: 'rotate(-3deg)',
+    fontFamily: 'Futuristic Shore, sans-serif',
+    textTransform: 'uppercase',
   } as React.CSSProperties,
   floatAnimation: {
-    animation: 'float 3s ease-in-out infinite', // Apply floating animation
+    animation: 'float 3s ease-in-out infinite',
   } as React.CSSProperties,
 };
+
+// Add media queries for responsiveness
+const mediaQueries = `
+  @media (max-width: 915px) {
+    .image-bottom-left,
+    .image-bottom-right {
+      opacity: 0; // Hide images on tablets and smaller screens
+    }
+    .gradientBox {
+      padding: 1rem;
+      width: 90%;
+      height: auto;
+    }
+    .title {
+      font-size: 2rem;
+      transform: rotate(0deg);
+    }
+    .content {
+      font-size: 1.2rem;
+      transform: rotate(0deg);
+    }
+  }
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.5rem;
+    }
+    .content {
+      font-size: 1rem;
+    }
+  }
+`;
+
+const mediaStyleTag = document.createElement('style');
+mediaStyleTag.innerHTML = mediaQueries;
+document.head.appendChild(mediaStyleTag);
 
 export default WhatsInit;

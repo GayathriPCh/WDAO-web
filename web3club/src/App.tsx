@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
@@ -8,7 +7,7 @@ import News from './pages/News';
 import MintNFT from './pages/MintNFT';
 import Reviews from './pages/Reviews';
 import Digiboard from './pages/Digiboard';
-import StressTest from './pages/Stresstest';
+import NavigationBar from './components/NavigationBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
@@ -28,43 +27,43 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 
+// RainbowKit and Wagmi config
 const config = getDefaultConfig({
   appName: 'My RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
   chains: [mainnet, polygon, optimism, arbitrum, base],
   syncConnectedChain: true,
-  ssr: true, // If your dApp uses server side rendering (SSR)
+  ssr: true,
 });
 const queryClient = new QueryClient();
 
-const App: React.FC = () => {
+// Main App component
+const App = () => {
   return (
     <WagmiProvider config={config as unknown as ResolvedRegister['config']}>
-    <QueryClientProvider client={queryClient}>
-      <RainbowKitProvider>
-        {/* Your App */}
-     
-    <Router>
-      <div>
-        
-        <Routes>
-          <Route path="/" Component={Home} />
-          <Route path="/blog" Component={Blog} />
-          <Route path="/events-calendar" Component={EventsCalendar} />
-          <Route path="/project-showcase" Component={ProjectShowcase} />
-          <Route path="/news" Component={News} />
-          <Route path="/mint-nft" Component={MintNFT} />
-          <Route path="/reviews" Component={Reviews} />
-          <Route path="/digiboard" Component={Digiboard} />
-          <Route path="/stress-test" Component={StressTest} />
-        </Routes>
-      </div>
-    </Router>
-    </RainbowKitProvider>
-    </QueryClientProvider>
-  </WagmiProvider>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider>
+          <Router>
+            <div>
+              {/* Responsive Navbar */}
+              <NavigationBar />
+              
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/events-calendar" element={<EventsCalendar />} />
+                <Route path="/project-showcase" element={<ProjectShowcase />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/mint-nft" element={<MintNFT />} />
+                <Route path="/reviews" element={<Reviews />} />
+                <Route path="/digiboard" element={<Digiboard />} />
+              </Routes>
+            </div>
+          </Router>
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
   );
-  
 };
 
 export default App;
