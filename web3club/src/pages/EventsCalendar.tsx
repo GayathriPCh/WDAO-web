@@ -134,7 +134,7 @@ const styles: { [key: string]: CSSProperties } = {
   },
   event: {
     width: '100%',
-    maxWidth: '600px',
+    maxWidth: '800px',
     marginBottom: '20px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     display: 'flex',
@@ -151,12 +151,12 @@ const styles: { [key: string]: CSSProperties } = {
     width: '100%',
   },
   image: {
-    width: '100%',
+    width: '450px',
     height: 'auto',
     objectFit: 'cover',
   },
   content: {
-    padding: '20px',
+    padding: '100px',
     textAlign: 'center', // Center text on mobile
   },
   button: {
