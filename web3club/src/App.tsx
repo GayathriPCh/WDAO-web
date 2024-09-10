@@ -9,6 +9,7 @@ import MintNFT from './pages/MintNFT';
 import AboutUs from './pages/AboutUs';
 import Digiboard from './pages/Digiboard';
 import NavigationBar from './components/NavigationBar';
+import StressTest from './pages/Stresstest';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
@@ -45,6 +46,7 @@ const App: React.FC = () => {
                   <Route path="/mint-nft" element={<MintNFT />} />
                   <Route path="/reviews" element={<AboutUs />} />
                   <Route path="/digiboard" element={<Digiboard />} />
+                  <Route path="/stress-test" element={<StressTest />} />
                 </Routes>
               </div>
             </div>
