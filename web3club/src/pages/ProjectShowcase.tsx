@@ -27,6 +27,9 @@ const ProjectShowcase: React.FC = () => {
     description: string;
     imageUrl: string;
     link: string;
+    studentName: string;
+    linkedin: string;
+    githubProfile: string;
   }
 
   const [projects, setProjects] = useState<Project[]>([]);
@@ -43,6 +46,9 @@ const ProjectShowcase: React.FC = () => {
           description: data.description,
           imageUrl: data.imageUrl,
           link: data.link,
+          studentName: data.studentName, // Fetch student name
+          linkedin: data.linkedin, // Fetch LinkedIn profile
+          githubProfile: data.githubProfile, // Fetch GitHub profile
         } as Project;
       });
       setProjects(projectList);
@@ -77,6 +83,17 @@ const ProjectShowcase: React.FC = () => {
             <div css={styles.cardContent}>
               <h2>{project.title}</h2>
               <p>{project.description}</p>
+              <div css={styles.builtBy}>
+  Built by: <span css={styles.gradientName}>{project.studentName}</span>
+</div>
+              <div css={styles.socialLinks}>
+                <a href={project.linkedin} target="_blank" rel="noopener noreferrer" css={styles.linkButton}>
+                  LinkedIn
+                </a>
+                <a href={project.githubProfile} target="_blank" rel="noopener noreferrer" css={styles.linkButton}>
+                  GitHub
+                </a>
+              </div>
               <button
                 css={styles.githubButton}
                 onClick={() => window.open(project.link, '_blank')}
@@ -181,6 +198,52 @@ const styles = {
     },
     '@media (max-width: 768px)': {
       padding: '0.4rem 0.8rem', // Adjust padding for mobile
+    },
+  }),
+  
+  linkButton: css({
+    background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+    color: '#000',
+    padding: '0.1rem 0.5rem',
+    borderRadius: '5px',
+    textDecoration: 'none',
+    transition: 'background-color 0.3s',
+    '&:hover': {
+      backgroundColor: '#ffffff',
+    },
+  }),
+  builtBy: css({
+    color: '#fff', // "Built by:" text in white
+    fontSize: '1rem',
+    marginTop: '10px', // Optional margin to add some space above
+  }),
+  gradientName: css({
+    background: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)',
+    WebkitBackgroundClip: 'text', // This makes the gradient appear only on the text
+    WebkitTextFillColor: 'transparent', // Ensures the text itself is transparent to show the gradient
+    fontWeight: 'bold', // Optional: makes the name bold
+  }),
+  socialLinks: css({
+    display: 'flex',
+    gap: '10px',
+    marginTop: '10px',
+    marginBottom: '20px', // Added margin below the LinkedIn and GitHub buttons
+    '& button': {
+      backgroundImage: 'linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)', // Gradient for LinkedIn and GitHub buttons
+      color: '#fff',
+      border: 'none',
+      padding: '0.5rem 1rem',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s, color 0.3s',
+      '&:hover': {
+        backgroundImage: 'none',
+        backgroundColor: '#9b34eb',
+        color: '#000',
+      },
+    },
+    '@media (max-width: 768px)': {
+      flexDirection: 'column', // Adjust for mobile
     },
   }),
 };

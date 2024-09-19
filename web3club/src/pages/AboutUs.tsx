@@ -22,43 +22,129 @@ const AboutUs: React.FC = () => {
       <section className={styles.team}>
         <h2>Meet the Team</h2>
 
+        {/* Team Member 1 */}
         <div className={styles.member}>
-          <img src="https://blockgeeks.com/wp-content/uploads/2022/10/image5-1.png.webp" alt="Head" className={styles.image} />
+          <div className={styles.profile}>
+            <div className={styles.flipCard}>
+              <div className={styles.flipCardInner}>
+                <div className={styles.flipCardFront}>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxLOP-difMBMG3oknhDI0yKM0ky9P6rnSGzg&s" alt="T.Manas" className={styles.image} />
+                </div>
+                <div className={styles.flipCardBack}>
+                  <img src="https://w0.peakpx.com/wallpaper/37/107/HD-wallpaper-neon-genesis-evangelion-vaporwave.jpg" alt="Avatar" className={styles.avatar} />
+                </div>
+              </div>
+            </div>
+          </div>
           <div className={styles.details}>
             <h3>T.Manas</h3>
             <p><strong>President/Founder/Dev</strong></p>
-            <p>This guy is the driving force behind our major projects and events. His leadership ensures that our club remains dynamic and impactful in the Web3 space. (future tense) </p>
+            <p>This guy is the driving force behind our major projects and events.</p>
+            <div className={styles.links}>
+  <a href="https://www.linkedin.com" className={styles.linkedinButton} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href="https://github.com" className={styles.githubButton} target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+
           </div>
         </div>
 
+        {/* Repeat similar structure for other team members */}
         <div className={styles.member}>
-          <img src="https://blockgeeks.com/wp-content/uploads/2022/10/image2-2.png.webp" alt="Co-Head" className={styles.image} />
+          <div className={styles.profile}>
+            <div className={styles.flipCard}>
+              <div className={styles.flipCardInner}>
+                <div className={styles.flipCardFront}>
+                  <img src="https://avatars.githubusercontent.com/u/132088009?v=4" alt="T.Manas" className={styles.image} />
+                </div>
+                <div className={styles.flipCardBack}>
+                  <img src="https://w0.peakpx.com/wallpaper/37/107/HD-wallpaper-neon-genesis-evangelion-vaporwave.jpg" alt="Avatar" className={styles.avatar} />
+                </div>
+              </div>
+            </div>
+          </div>
           <div className={styles.details}>
-            <h3>Gayathri Chowdhary parepalli</h3>
-            <p><strong>Co-founder/Secretary/Developer</strong></p>
-            <p>This dude assists in managing the club's activities and supports the president in executing the strategic vision. Her contributions are essential in ensuring that our events and workshops are successful.</p>
+            <h3>T.Manas</h3>
+            <p><strong>President/Founder/Dev</strong></p>
+            <p>This guy is the driving force behind our major projects and events.</p>
+            <div className={styles.links}>
+  <a href="https://www.linkedin.com" className={styles.linkedinButton} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href="https://github.com" className={styles.githubButton} target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+
           </div>
         </div>
-
         <div className={styles.member}>
-          <img src="https://blockgeeks.com/wp-content/uploads/2022/10/image4-1.png.webp" alt="Lead" className={styles.image} />
+          <div className={styles.profile}>
+            <div className={styles.flipCard}>
+              <div className={styles.flipCardInner}>
+                <div className={styles.flipCardFront}>
+                  <img src="https://blockgeeks.com/wp-content/uploads/2022/10/image5-1.png.webp" alt="T.Manas" className={styles.image} />
+                </div>
+                <div className={styles.flipCardBack}>
+                  <img src="https://w0.peakpx.com/wallpaper/37/107/HD-wallpaper-neon-genesis-evangelion-vaporwave.jpg" alt="Avatar" className={styles.avatar} />
+                </div>
+              </div>
+            </div>
+          </div>
           <div className={styles.details}>
-            <h3>Sujith Bojjowwarr</h3>
-            <p><strong>Vice-president/Doesnt exist</strong></p>
-            <p>Leads our hackathon and workshop teams, providing guidance and support to ensure the high quality of our technical sessions.(None of this is true)</p>
+            <h3>T.Manas</h3>
+            <p><strong>President/Founder/Dev</strong></p>
+            <p>This guy is the driving force behind our major projects and events.</p>
+            <div className={styles.links}>
+  <a href="https://www.linkedin.com" className={styles.linkedinButton} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href="https://github.com" className={styles.githubButton} target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+
           </div>
         </div>
-
         <div className={styles.member}>
-          <img src="https://i.guim.co.uk/img/media/ef8492feb3715ed4de705727d9f513c168a8b196/37_0_1125_675/master/1125.jpg?width=645&dpr=2&s=none" alt="Co-Lead" className={styles.image} />
+          <div className={styles.profile}>
+            <div className={styles.flipCard}>
+              <div className={styles.flipCardInner}>
+                <div className={styles.flipCardFront}>
+                  <img src="https://blockgeeks.com/wp-content/uploads/2022/10/image5-1.png.webp" alt="T.Manas" className={styles.image} />
+                </div>
+                <div className={styles.flipCardBack}>
+                  <img src="https://w0.peakpx.com/wallpaper/37/107/HD-wallpaper-neon-genesis-evangelion-vaporwave.jpg" alt="Avatar" className={styles.avatar} />
+                </div>
+              </div>
+            </div>
+          </div>
           <div className={styles.details}>
-            <h3>AtmalaSCK</h3>
-            <p><strong>Co-Vice-President/Unfortunately senior</strong></p>
-            <p>Brother collaborates with the lead in organizing events and managing club activities. New season new character.</p>
+            <h3>T.Manas</h3>
+            <p><strong>President/Founder/Dev</strong></p>
+            <p>This guy is the driving force behind our major projects and events.</p>
+            <div className={styles.links}>
+  <a href="https://www.linkedin.com" className={styles.linkedinButton} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href="https://github.com" className={styles.githubButton} target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+
           </div>
         </div>
+        <div className={styles.member}>
+          <div className={styles.profile}>
+            <div className={styles.flipCard}>
+              <div className={styles.flipCardInner}>
+                <div className={styles.flipCardFront}>
+                  <img src="https://avatars.githubusercontent.com/u/113188197?v=4" alt="T.Manas" className={styles.image} />
+                </div>
+                <div className={styles.flipCardBack}>
+                  <img src="https://w0.peakpx.com/wallpaper/37/107/HD-wallpaper-neon-genesis-evangelion-vaporwave.jpg" alt="Avatar" className={styles.avatar} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.details}>
+            <h3>T.Manas</h3>
+            <p><strong>President/Founder/Dev</strong></p>
+            <p>This guy is the driving force behind our major projects and events.</p>
+            <div className={styles.links}>
+  <a href="https://www.linkedin.com" className={styles.linkedinButton} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href="https://github.com" className={styles.githubButton} target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
 
-      
+          </div>
+        </div>
       </section>
 
       <section className={styles.contact}>
