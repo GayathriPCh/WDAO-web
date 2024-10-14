@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 import './MintNFT.css';
 import mnft from './mnft.png';
 import GlassCards from './GlassCards';
-import qrImage from './WallstreetdaoKLH.png'; // Replace with the actual path to your QR code image
+import qrImage from './output-onlinepngtools.png'; // Replace with the actual path to your QR code image
 import SocialIcons from './SocialIcons';
 
 const MintNFT: React.FC = () => {

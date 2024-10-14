@@ -36,7 +36,7 @@
 
     width: 100%;
     height: 40px;
-    background: linear-gradient(90deg, #09ffef, #b90aff); /* Gradient from pink to blue */
+    background: linear-gradient(90deg, #09ffef, #00ffff); /* Gradient from pink to blue */
     background-clip: text; /* Applies the gradient to the text */
     -webkit-background-clip: text; /* Safari support */
     color: transparent; /* Makes the text transparent to show the gradient */
