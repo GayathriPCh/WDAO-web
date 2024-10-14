@@ -1,55 +1,220 @@
-/* MintNFT.css */
-
-/* Center the minting container on the page */
+/* Container for the entire page */
+@font-face {
+  font-family: 'GameRobot';
+  src: url('../fonts/FuturisticShoreRegular-2JP8.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'font2';
+  src: url('../fonts/GlitchGoblin-2O87v.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 .mint-container {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Dark purple/blue gradient */
+  min-height: 100vh;
+  padding: 40px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hero section with welcome text and NFT card */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  height: 70vh; /* Adjust height for aesthetics */
+}
+
+/* Text section with the call to action */
+.text-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  background-color: #f0f0f5; /* Soft background color */
+  align-items: center;
+  color: white;
+  font-family: 'GameRobot', sans-serif;
+  text-align: center;
   padding: 20px;
 }
 
-/* Style for the heading */
-.mint-container h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333; /* Dark color for contrast */
+.text-section h1 {
+  font-size: 3rem;
   margin-bottom: 20px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Style the mint button */
-.mint-container button {
-  background-color: #4CAF50; /* Green button color */
+/* NFT card section */
+.nft-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.nft-card img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* GlassCards section */
+.glasscards-section {
+  padding: 40px 0;
+}
+
+/* Social media section */
+.social-section {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Align items vertically */
+  padding: 40px 0;
+  width: 100%; /* Ensure it uses the full width */
+  gap: 0; /* Remove any gap between elements */
+}
+
+/* Style for QR code */
+.social-section img {
+  width: 60vw; /* Increase width to 60% of the viewport width */
+  max-width: 400px; /* Optional: Set a max width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 500px; /* Add some space to the left */
+}
+
+/* Social icons container */
+.social-icons-container {
+  display: flex;
+  flex-direction: column; /* Stack social icons vertically */
+  align-items: center; /* Center the social icons */
+  width: 50vw; /* Take 50% of the viewport width */
+  margin-right: 400px;
+}
+
+/* Style for the paragraph */
+.social-section p {
+  margin-bottom: 10px; /* Space between the text and social icons */
+}
+
+
+
+
+/* Minting button section */
+.mint-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+.mint-section button {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
   color: white;
-  padding: 15px 30px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   border: none;
-  border-radius: 5px;
+  padding: 15px 30px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.mint-container button:hover {
-  background-color: #45a049; /* Slightly darker on hover */
+.mint-section button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #00ff00, #007e33); /* Gradient green background */
 }
 
-.mint-container button:disabled {
-  background-color: #ccc; /* Greyed out when disabled */
-  cursor: not-allowed;
-}
-
-/* Style for the success message */
-.mint-container p {
-  font-size: 1.2rem;
-  color: #28a745; /* Green text for success message */
+.error-message {
+  color: red;
   margin-top: 20px;
 }
 
-/* Style for error messages */
-.mint-container .error {
-  font-size: 1.2rem;
-  color: #d9534f; /* Red text for errors */
+.success-message {
+  color: limegreen;
   margin-top: 20px;
+}
+/* Membership section */
+.membership-section {
+  text-align: center; /* Center the text */
+  margin: 60px 0; /* Add some margin for spacing */
+  color: white; /* Ensure text is white for visibility */
+  font-family: 'font2', sans-serif; /* Use the same font */
+}
+
+.membership-title {
+  font-size: 2.5rem; /* Adjust font size for the title */
+  margin-bottom: 10px; /* Space between title and subtitle */
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.membership-subtitle {
+  font-size: 1.5rem; /* Adjust subtitle size */
+  margin-bottom: 20px; /* Space below subtitle */
+}
+
+/* Membership NFT image section */
+.membership-nft {
+  position: relative; /* Position for glow effect */
+  display: inline-block; /* Align it nicely */
+}
+
+.membership-nft img {
+  width: 80%; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px; /* Add border radius */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 138, 0, 0.5); /* Add glow effect */
+  margin-bottom: 20px; /* Space below the image */
+}
+
+/* Mint NFT button for membership */
+.mint-nft-button {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.mint-nft-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #00ff00, #007e33); /* Gradient green background */
+  }
+
+/* Additional message section */
+.additional-message {
+  text-align: center; /* Center the text */
+  margin-top: 5px; /* Space above */
+  color: white; /* Ensure visibility */
+  font-family: 'GameRobot', sans-serif; /* Use the same font */
+  font-size: 1.5rem; /* Adjust size as needed */
+  margin-bottom: 100px;
+}
+/* Style for the additional message */
+
+.flip-side-text {
+  font-size: 7rem; /* Adjust the font size */
+  font-weight: bold; /* Make the text bold */
+  color: white; /* Text color */
+  text-shadow: 0 0 5px rgba(255, 0, 230, 0.7), /* White glow */
+               0 0 10px rgba(14, 199, 255, 0.5); /* Brighter glow */
+  background: linear-gradient(90deg, #ff0080, #00ffff); /* Neon gradient background */
+  background-clip: text; /* Clip background to text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Fill color for text */
+  padding: 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  display: inline-block; /* Make it inline-block for padding and background */
 }

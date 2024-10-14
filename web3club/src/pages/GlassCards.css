@@ -1,0 +1,54 @@
+/* From Uiverse.io by codebykay101 */ 
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container .glass {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(#fff2, transparent);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+    margin: 0 -45px;
+    flex-direction: column; /* Stack SVG and text vertically */
+    justify-content: center; /* Center content vertically */
+    backdrop-filter: blur(10px);
+    transform: rotate(calc(var(--r) * 1deg));
+  }
+  
+  .container:hover .glass {
+    transform: rotate(0deg);
+    margin: 0 10px;
+  }
+  
+  .container .glass::before {
+    content: attr(data-text);
+    position: absolute;
+
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, #09ffef, #b90aff); /* Gradient from pink to blue */
+    background-clip: text; /* Applies the gradient to the text */
+    -webkit-background-clip: text; /* Safari support */
+    color: transparent; /* Makes the text transparent to show the gradient */
+    font-size: 2em; /* Increase this value for larger text */
+    font-weight: bold; /* Optional: Makes text bold */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 160px; 
+  }
+  .container .glass svg {
+    font-size: 5em;
+    fill: #fff;
+  }
+  

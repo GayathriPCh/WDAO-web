@@ -1,0 +1,32 @@
+{
+    "name": "Club Membership NFT",
+    "description": "Join our exclusive community and enjoy unique benefits!",
+    "image": "https://ipfs.io/ipfs/QmdM3Dpuh3j5PhUejewXMcqKpoJkA7PNsBBokt7Qyomse1", 
+    "attributes": [
+      {
+        "trait_type": "Membership Level",
+        "value": "Gold"
+      },
+      {
+        "trait_type": "Access Rights",
+        "value": "Exclusive Events"
+      },
+      {
+        "trait_type": "Benefits",
+        "value": "Discounts on Merchandise"
+      },
+      {
+        "trait_type": "Validity",
+        "value": "Lifetime"
+      },
+      {
+        "trait_type": "Background",
+        "value": "Gradient Purple"
+      },
+      {
+        "trait_type": "Shape",
+        "value": "Badge"
+      }
+    ]
+  }
+  

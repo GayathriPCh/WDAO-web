@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { ethers } from 'ethers'; // In ethers v6, this is used without 'providers'
+import { ethers } from 'ethers'; 
 import './MintNFT.css';
+import mnft from './mnft.png';
+import GlassCards from './GlassCards';
+import qrImage from './WallstreetdaoKLH.png'; // Replace with the actual path to your QR code image
+import SocialIcons from './SocialIcons';
 
 const MintNFT: React.FC = () => {
   const [minting, setMinting] = useState(false);
@@ -492,7 +496,7 @@ const MintNFT: React.FC = () => {
       "stateMutability": "view",
       "type": "function"
     }
-  ];
+  ]; // Your contract ABI here
 
   const mintNFT = async () => {
     try {
@@ -506,16 +510,12 @@ const MintNFT: React.FC = () => {
       }
 
       await window.ethereum.request({ method: 'eth_requestAccounts' });
-      
-      // In ethers v6, you create a provider like this:
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
-
       const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
-      const tokenURI = "https://your-token-uri.com/metadata";
+      const tokenURI = "https://ipfs.io/ipfs/QmX19k4raqF33FJnUH37HF1B8whab2jEysbg58UtPMVARm";
       const transaction = await contract.mintNFT(tokenURI);
-
       await transaction.wait();
 
       setMinting(false);
@@ -529,12 +529,51 @@ const MintNFT: React.FC = () => {
 
   return (
     <div className="mint-container">
-      <h1>Mint Your NFT</h1>
-      <button onClick={mintNFT} disabled={minting}>
-        {minting ? 'Minting...' : 'Mint NFT'}
+      <div className="hero-section">
+        <div className="text-section">
+          <h1>Join our community by minting your first NFT</h1>
+        </div>
+        <div className="nft-card">
+          <img src={mnft} alt="NFT Card" />
+        </div>
+      </div>
+
+      {/* GlassCards section */}
+      <div className="glasscards-section">
+        <GlassCards />
+      </div>
+
+      {/* Social section */}
+      <div className="social-section">
+        <img src={qrImage} alt="QR Code" />
+        <div className="social-icons-container"> {/* New container for social icons */}
+    <p>Follow us on</p>
+    <SocialIcons />
+         
+        </div>
+      </div>
+
+     {/* Membership NFT Section */}
+<div className="membership-section">
+  <h2 className="membership-title">Get a Club Membership NFT on the SEPOLIA TESTNET</h2>
+  <p className="membership-subtitle">Join us in the revolution!</p>
+  <div className="membership-nft">
+    <img src={mnft} alt="Membership NFT" />
+    <div className="mint-section">
+      <button onClick={mintNFT} disabled={minting || minted}>
+        {minting ? 'Minting...' : minted ? 'Minted' : 'Mint Membership NFT'}
       </button>
-      {minted && <p>🎉 Your NFT has been successfully minted!</p>}
-      {error && <p className="error">{error}</p>}
+      {error && <p className="error-message">{error}</p>}
+      {minted && <p className="success-message">Membership NFT minted successfully!</p>}
+    </div>
+  </div>
+</div>
+
+{/* Additional Section */}
+<div className="additional-message">
+<p className="flip-side-text">See you on the flip side!</p>
+</div>
+
     </div>
   );
 };
