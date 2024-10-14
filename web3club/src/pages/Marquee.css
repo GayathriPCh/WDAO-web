@@ -1,0 +1,37 @@
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust this height to accommodate the images and title */
+}
+
+.marquee-title {
+    font-size: 60px; /* Adjust to fit in smaller screen heights */
+    text-align: center;
+    margin: 20px 0; /* Adjust margin as needed */
+}
+
+.marquee {
+    display: flex;
+    position: absolute;
+    animation: scroll 15s linear infinite; /* Increased duration for smoother scrolling */
+    transform: rotate(-15deg); /* Increased angle for more diagonal effect */
+}
+
+.marquee-item {
+    margin: 0 40px; /* Increased spacing between items */
+}
+
+.marquee img {
+    height: 400px; /* Adjust image height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Start at normal position */
+    }
+    100% {
+        transform: translateX(-50%); /* Move to the left by half the width of the items */
+    }
+}

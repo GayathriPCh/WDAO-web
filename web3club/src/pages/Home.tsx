@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../fonts/fonts.css';
 import bg1 from './bg1.png';
 import WhatsInIt from './WhatsInIt';
+import Marquee from './Marquee';
+import IntroVid from './IntroVid';
+import intro from '../assets/intro.mp4';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -25,7 +28,11 @@ const Home: React.FC = () => {
           </p>
         </div>
       </div>
+     
       <WhatsInIt />
+      <IntroVid videoSrc={intro}/>
+      <Marquee />
+      
     </div>
   );
 };
@@ -77,6 +84,21 @@ const styles = {
   heroSubtitle: {
     fontSize: '1.5rem', // Adjust subtitle font size for responsiveness
   } as React.CSSProperties,
+  gifBoxRight: {
+    position: 'relative',
+    width: '50%', // Take half of the heroSection
+    height: '100%', // Full height to match heroSection
+    overflow: 'hidden',
+    display: 'flex', // Use flex to center the GIF
+    justifyContent: 'center',
+    alignItems: 'center',
+  } as React.CSSProperties,
+  gifImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain', // Change to 'contain' to ensure the GIF fits fully within the box
+  } as React.CSSProperties,
+  
 };
 
 const globalStyles = document.createElement('style');

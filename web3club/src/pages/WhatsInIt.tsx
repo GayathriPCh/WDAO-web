@@ -1,5 +1,4 @@
 import React from 'react';
-import bg2 from './bg2.png';
 import whatsImage from './whats.png';
 import andromedaFont from '../fonts/Andromeda-eR2n.ttf';
 import futuristicShoreFont from '../fonts/FuturisticShoreRegular-2JP8.otf';
@@ -55,14 +54,14 @@ const WhatsInit: React.FC = () => {
 
 const styles = {
   container: {
-    background: `url(${bg2}) no-repeat center center fixed`,
+    background: `url(https://images.unsplash.com/photo-1632349069255-3b55e28e6a49?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTN8fHxlbnwwfHx8fHw%3D) no-repeat center center fixed`,
     backgroundSize: 'cover',
     minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: 'Arial, sans-serif',
-    padding: '0 1rem', // Add padding to ensure content isn't too close to edges
+    padding: '0 1rem',
   } as React.CSSProperties,
   overlay: {
     position: 'relative',
@@ -71,8 +70,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bg2}) no-repeat center center',
-    backgroundSize: 'cover',
+    background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))',
   } as React.CSSProperties,
   contentWrapper: {
     position: 'relative',
@@ -81,8 +79,8 @@ const styles = {
     justifyContent: 'center',
     width: '100%',
     zIndex: 1,
-    flexDirection: 'column', // Stack elements vertically on smaller screens
-    textAlign: 'center', // Center align text on smaller screens
+    flexDirection: 'column',
+    textAlign: 'center',
   } as React.CSSProperties,
   gradientBox: {
     background: 'transparent',
@@ -91,8 +89,8 @@ const styles = {
     boxShadow: '0px 8px 32px rgba(0, 0, 0, 0.3)',
     color: '#ffffff',
     width: '90%',
-    maxWidth: '600px', // Limit width on larger screens
-    height: 'auto', // Adjust height automatically
+    maxWidth: '600px',
+    height: 'auto',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -100,27 +98,25 @@ const styles = {
     margin: '0',
     textAlign: 'center',
     backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.18)',
-    position: 'relative',
-    overflow: 'hidden',
+    // Removed the border property to eliminate the outline
   } as React.CSSProperties,
   imageBottomLeft: {
     position: 'absolute',
     bottom: '0',
     left: '0',
     zIndex: 0,
-    width: '30%', // Adjust size as needed
+    width: '30%',
     height: 'auto',
-    display: 'block', // Default to visible
+    display: 'block',
   } as React.CSSProperties,
   imageBottomRight: {
     position: 'absolute',
     bottom: '0',
     right: '0',
     zIndex: 0,
-    width: '30%', // Adjust size as needed
+    width: '30%',
     height: 'auto',
-    display: 'block', // Default to visible
+    display: 'block',
   } as React.CSSProperties,
   image: {
     width: '100%',
@@ -128,18 +124,18 @@ const styles = {
     objectFit: 'cover',
   } as React.CSSProperties,
   title: {
-    fontSize: '3rem',
+    fontSize: '5rem',
     fontWeight: 'bold',
     marginBottom: '1rem',
     transform: 'rotate(-3deg)',
     fontFamily: 'Andromeda',
     textTransform: 'uppercase',
-    background: '-webkit-linear-gradient(#21ff25, #8c21ff)',
+    background: '-webkit-linear-gradient(#5ff2e8, #8c21ff)',
     '-webkit-background-clip': 'text',
     '-webkit-text-fill-color': 'transparent',
   } as React.CSSProperties,
   content: {
-    color: '#21ff25',
+    color: '#ffffeb',
     fontSize: '1.5rem',
     lineHeight: '1.5',
     transform: 'rotate(-3deg)',
