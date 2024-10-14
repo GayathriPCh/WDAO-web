@@ -1,6 +1,6 @@
 .video-container {
     width: 80%; /* Adjust width as needed */
-    max-width: 800px; /* Maximum width of the video box */
+    max-width: 3000px; /* Maximum width of the video box */
     margin: auto; /* Center the video box */
     padding: 20px; /* Padding around the video */
     background-color: black; /* Black background */
@@ -9,6 +9,8 @@
     display: flex; /* Center the video inside */
     justify-content: center; /* Center the video horizontally */
     align-items: center; /* Center the video vertically */
+    margin-top: 400px;
+    margin-bottom: 400px;
 }
 
 .intro-video {
