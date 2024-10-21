@@ -1,20 +1,21 @@
+/* Video container to take full viewport height */
 .video-container {
-    width: 80%; /* Adjust width as needed */
-    max-width: 3000px; /* Maximum width of the video box */
-    margin: auto; /* Center the video box */
-    padding: 20px; /* Padding around the video */
-    background-color: black; /* Black background */
-    border-radius: 15px; /* Smooth corners */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glow effect */
-    display: flex; /* Center the video inside */
-    justify-content: center; /* Center the video horizontally */
-    align-items: center; /* Center the video vertically */
-    margin-top: 400px;
-    margin-bottom: 400px;
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+    background-color: black; /* Ensure background color is visible if video doesn't load */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide anything that overflows the container */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
 }
 
+/* Video itself */
 .intro-video {
-    width: 100%; /* Video takes the full width of the container */
-    border-radius: 10px; /* Smooth corners for the video */
-    outline: none; /* Remove default outline */
+    width: 100%; /* Make video take up full width of the container */
+    height: 100%; /* Make video take up full height of the container */
+    object-fit: cover; /* Ensures video covers the entire container without distortion */
+    border: none;
+    outline: none;
 }
