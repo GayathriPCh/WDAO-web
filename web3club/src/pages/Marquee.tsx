@@ -5,13 +5,18 @@ import './Marquee.css'; // Create a CSS file for styling
 const Marquee: React.FC = () => {
   const blogImages = [
     { src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ttmPrBegrcWHAnZbzUIZRA.png', alt: 'Blog 1', href: '/blogs/1' },
-    { src: 'https://media.licdn.com/dms/image/v2/D4D22AQEDcIvoTear9Q/feedshare-shrink_800/feedshare-shrink_800/0/1726735458706?e=1729728000&v=beta&t=76D7WPr5FRv9HJTEvaH6LE6NKRm2ZmKqPuQ5W5dA34o', alt: 'Blog 2', href: '/blogs/2' },
+    { src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*w5lDIbsK9DjzSPBBuwyOqQ.png', alt: 'Blog 2', href: '/blogs/2' },
     { src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*TDeYOyUj-CTkFJzZ8nuR_A.png', alt: 'Blog 3', href: '/blogs/3' },
+    { src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sYCtIJpI2ajXvRpA06OV3w.png', alt: 'Blog 4', href: '/blogs/4' },
+    {src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*VY1_UwoRviJLxcjkY5mT8A.png', alt: 'Blog 5', href: '/blogs/5'},
+    {src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*1UT3VOKpk7t1rC0jnufaxg.png', alt: 'Blog 6', href: '/blogs/6'},
     // Add more images as needed
     { src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ttmPrBegrcWHAnZbzUIZRA.png', alt: 'Blog 1', href: '/blogs/1' },
-    { src: 'https://media.licdn.com/dms/image/v2/D4D22AQEDcIvoTear9Q/feedshare-shrink_800/feedshare-shrink_800/0/1726735458706?e=1729728000&v=beta&t=76D7WPr5FRv9HJTEvaH6LE6NKRm2ZmKqPuQ5W5dA34o', alt: 'Blog 2', href: '/blogs/2' },
+    { src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*w5lDIbsK9DjzSPBBuwyOqQ.png', alt: 'Blog 2', href: '/blogs/2' },
     { src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*TDeYOyUj-CTkFJzZ8nuR_A.png', alt: 'Blog 3', href: '/blogs/3' },
-  ];
+    { src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sYCtIJpI2ajXvRpA06OV3w.png', alt: 'Blog 4', href: '/blogs/4' },
+    {src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*VY1_UwoRviJLxcjkY5mT8A.png', alt: 'Blog 5', href: '/blogs/5'},
+    {src: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*1UT3VOKpk7t1rC0jnufaxg.png', alt: 'Blog 6', href: '/blogs/6'},  ];
 
   return (
     <div className="marquee-container">

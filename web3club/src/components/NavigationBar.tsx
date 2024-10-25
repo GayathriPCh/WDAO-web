@@ -13,7 +13,7 @@ import gmailIcon from '../pages/gmail.svg';
 import stressIcon from '../pages/stress.png';
 import klhLogo from '../pages/klh.png'; // Corrected KLH logo import
 import styles from './NavigationBar.module.css'; // Import CSS module
-
+import youtubeIcon from './youtube.svg';
 const NavigationBar: React.FC = () => {
   const [isSocialDropdownOpen, setIsSocialDropdownOpen] = useState(false);
 
@@ -58,29 +58,33 @@ const NavigationBar: React.FC = () => {
               </button>
               {isSocialDropdownOpen && (
                 <div className={styles.dropdownMenu}>
-                  <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://discord.gg/EXY45D2m" target="_blank" rel="noopener noreferrer">
                     <img src={discordIcon} alt="Discord" className={styles.icon} />
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/company/wallsteet-dao-club-klh/about/" target="_blank" rel="noopener noreferrer">
                     <img src={linkedinIcon} alt="LinkedIn" className={styles.icon} />
                   </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://x.com/members36136" target="_blank" rel="noopener noreferrer">
                     <img src={twitterIcon} alt="Twitter" className={styles.icon} />
                   </a>
-                  <a href="https://medium.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://medium.com/@wallstreetclub_83221" target="_blank" rel="noopener noreferrer">
                     <img src={mediumIcon} alt="Medium" className={styles.icon} />
                   </a>
-                  <a href="mailto:example@gmail.com">
+                  <a href="mailto:wallstreetclub@klh.edu.in">
                     <img src={gmailIcon} alt="Gmail" className={styles.icon} />
                   </a>
-                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/WallstreetDAO-KLH" target="_blank" rel="noopener noreferrer">
                     <img src={githubIcon} alt="GitHub" className={styles.icon} />
                   </a>
-                  <a href="https://t.me" target="_blank" rel="noopener noreferrer">
+                  <a href="https://t.me/+F7eRd6w-EW00MTQ1" target="_blank" rel="noopener noreferrer">
                     <img src={telegramIcon} alt="Telegram" className={styles.icon} />
                   </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.instagram.com/wall_street_klh/" target="_blank" rel="noopener noreferrer">
                     <img src={instagramIcon} alt="Instagram" className={styles.icon} />
+                  </a>
+        
+                    <a href="https://www.youtube.com/@wallstreetdao" target="_blank" rel="noopener noreferrer">
+                      <img src={youtubeIcon} alt="Youtube" className={styles.icon} />
                   </a>
                 </div>
               )}
