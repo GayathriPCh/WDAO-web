@@ -11,6 +11,7 @@ import twitterIcon from '../pages/twitter.svg';
 import discordIcon from '../pages/discord.svg';
 import gmailIcon from '../pages/gmail.svg';
 import stressIcon from '../pages/stress.png';
+import klhLogo from '../pages/klh.png'; // Corrected KLH logo import
 import styles from './NavigationBar.module.css'; // Import CSS module
 
 const NavigationBar: React.FC = () => {
@@ -24,7 +25,12 @@ const NavigationBar: React.FC = () => {
     <Navbar expand="lg" bg="dark" variant="dark" sticky="top" className={styles.navbar}>
       <Container>
         <Navbar.Brand as={Link} to="/" className={styles.brand}>
-          WallStreet DAO
+          <div className={styles.logoContainer}>
+            <img src={klhLogo} alt="KLH University Logo" className={styles.klhLogo} />
+          </div>
+          <div className={styles.brandText}>
+            WallStreet DAO
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -46,7 +52,7 @@ const NavigationBar: React.FC = () => {
                 className={`${styles.socialButton} ${isSocialDropdownOpen ? styles.socialButtonHover : ''}`}
               >
                 Socials
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                <svg viewBox="0 0 24 24" width="10" height="0" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
               </button>

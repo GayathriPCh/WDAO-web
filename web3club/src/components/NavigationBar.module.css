@@ -24,6 +24,37 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #90f542;
+    display: flex;
+    align-items: center;
+  }
+  
+  .klhLogo {
+    width: 70px;
+    height: 40px;
+    margin-right: 5px; /* Reduced the margin between the logo and text */
+    padding: 0; /* Remove extra padding */
+  }
+  
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-right: 3rem;
+    padding: 0.5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logoContainer {
+    display: inline-block;
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .brandText {
+    display: inline-block;
+    vertical-align: middle;
   }
   
   .navLinks {
@@ -37,7 +68,7 @@
     color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
-    margin: 0 1rem;
+    margin: 0 10px;
     transition: color 0.3s ease-in-out;
   }
   
@@ -84,6 +115,7 @@
   
   .connectButtonContainer {
     margin-left: 1rem;
+    margin-right: 3rem;
   }
   
   .stressButton {
