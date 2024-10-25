@@ -11,7 +11,7 @@ import twitterIcon from '../pages/twitter.svg';
 import discordIcon from '../pages/discord.svg';
 import gmailIcon from '../pages/gmail.svg';
 import stressIcon from '../pages/stress.png';
-import klhLogo from '../pages/klh.png'; // Corrected KLH logo import
+import klhLogo from '../pages/klhr.png'; // Corrected KLH logo import
 import styles from './NavigationBar.module.css'; // Import CSS module
 import youtubeIcon from './youtube.svg';
 const NavigationBar: React.FC = () => {
