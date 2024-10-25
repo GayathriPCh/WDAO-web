@@ -8,8 +8,12 @@
     z-index: 1000; /* Ensure it stays on top */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
   }
+  .container {
+    max-width: 100%; /* Ensure container fits within screen width */
+    padding: 0 1.5rem; /* Add some padding on the sides */
+  }
   .navbar {
-    background: linear-gradient(90deg, #000000, #2b1d35); /* Black to Purple Gradient */
+    background: linear-gradient(90deg, #000000, #1d1224); /* Black to Purple Gradient */
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 0.5rem;
@@ -17,6 +21,7 @@
     width: 100%;
     top: 0;
     z-index: 1000;
+    overflow: hidden;
   }
   
   
@@ -36,17 +41,7 @@
     padding: 0; /* Remove extra padding */
   }
   
-  .navbar {
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    margin-right: 3rem;
-    padding: 0.5rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
+ 
   
   .logoContainer {
     display: inline-block;
@@ -62,7 +57,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex: 1;
+    flex: wrap;
   }
   
   .navLink {
