@@ -11,6 +11,8 @@
   .container {
     max-width: 100%; /* Ensure container fits within screen width */
     padding: 0 1.5rem; /* Add some padding on the sides */
+    padding-right: 1rem; /* Adjust padding to your needs */
+    box-sizing: border-box; /* Ensures padding is included in element width */
   }
   .navbar {
     background: linear-gradient(90deg, #000000, #1d1224); /* Black to Purple Gradient */
@@ -21,7 +23,8 @@
     width: 100%;
     top: 0;
     z-index: 1000;
-    overflow: hidden;
+    overflow: visible;
+    box-sizing: border-box; /* Ensures padding is included in element's width */
   }
   
   
@@ -56,12 +59,13 @@
   .navLinks {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    flex: wrap;
+     flex: 1;
+  flex-wrap: wrap; /* Wrap items when necessary to avoid overflow */
+  align-items: center;
   }
   
   .navLink {
-    color: #ffffff;
+    color: #7fe64c;
     text-decoration: none;
     font-size: 0.9rem;
     margin: 0 10px;
@@ -71,21 +75,23 @@
   .dropdown {
     position: relative;
     margin-left: 1rem;
+    z-index: 1;
   }
   
   .socialButton {
     padding: 10px 20px;
     background-color: #212121;
-    border: 1px solid #fff;
+    border: 1px solid #41f025;
     border-radius: 5px;
-    color: #fff;
+    color: #94f920;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
-  }
+    z-index: 2;
+  } 
   
   .socialButtonHover {
     background-color: #333;
@@ -94,12 +100,13 @@
   
   .dropdownMenu {
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 100%; /* Position below the button */
+    right: 0; /* Align to the right edge */
     background-color: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(10px);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 999; /* Ensure the dropdown appears above the navbar */
+    width: 200px; /* Adjust as needed */
   }
   
   .icon {
