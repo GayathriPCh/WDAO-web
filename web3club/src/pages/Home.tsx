@@ -6,7 +6,7 @@ import WhatsInIt from './WhatsInIt';
 import Marquee from './Marquee';
 import IntroVid from './IntroVid';
 import intro from '../assets/intro.mp4';
-
+import logo from '../pages/wdaologo.png'
 const Home: React.FC = () => {
   useEffect(() => {
     const link = document.createElement('link');
@@ -19,6 +19,9 @@ const Home: React.FC = () => {
     <div style={styles.container}>
       <div style={styles.heroSection}>
         <div style={styles.heroContent}>
+        <div style={styles.contentRow}>
+    <img src={logo} alt="Logo" style={styles.logo} />
+  <div style={styles.textContainer}>
           <h1 style={styles.heroTitle}>
             <span style={styles.whiteText}>the </span>
             <span style={styles.gradientText}>Wallstreet DAO</span>
@@ -26,6 +29,8 @@ const Home: React.FC = () => {
           <p style={styles.heroSubtitle}>
             The first of its kind university DAO community, based KLH Uni
           </p>
+        </div>
+        </div>
         </div>
       </div>
      
@@ -97,6 +102,27 @@ const styles = {
     width: '100%',
     height: '100%',
     objectFit: 'contain', // Change to 'contain' to ensure the GIF fits fully within the box
+  } as React.CSSProperties,
+  logoContainer: {
+    marginRight: '1rem', // Space between logo and text
+    display: 'flex',
+    alignItems: 'center', // Center the logo vertically
+  } as React.CSSProperties,
+  textContainer: {
+    display: 'flex',
+    marginLeft: '1rem', // Space between logo and text
+    flexDirection: 'column', // Stack title and subtitle vertically
+    alignItems: 'flex-start', // Align text to the left
+  } as React.CSSProperties,
+  logo: {
+    width: '180px', // Adjust size as needed
+    height: '170px', // Maintain aspect ratio
+  } as React.CSSProperties,
+  contentRow: {
+    display: 'flex',
+    justifyContent: 'center', // Center the content horizontally
+    alignItems: 'center', // Center the content vertically
+    flexDirection: 'row', // Row layout for logo + text
   } as React.CSSProperties,
   
 };
