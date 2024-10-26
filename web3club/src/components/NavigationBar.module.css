@@ -1,142 +1,138 @@
 .navigationBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px; /* Adjust based on your design */
-    background-color: #fff; /* Background color */
-    z-index: 1000; /* Ensure it stays on top */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
-  }
-  .container {
-    max-width: 100%; /* Ensure container fits within screen width */
-    padding: 0 1.5rem; /* Add some padding on the sides */
-    padding-right: 1rem; /* Adjust padding to your needs */
-    box-sizing: border-box; /* Ensures padding is included in element width */
-  }
-  .navbar {
-    background: linear-gradient(90deg, #000000, #1d1224); /* Black to Purple Gradient */
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 0.5rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    overflow: visible;
-    box-sizing: border-box; /* Ensures padding is included in element's width */
-  }
-  
-  
-  .brand {
-    font-family: 'Moonhouse', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #90f542;
-    display: flex;
-    align-items: center;
-  }
-  
-  .klhLogo {
-    width: 120px;
-    height: 120px;
-    margin-right: 5px; /* Reduced the margin between the logo and text */
-    padding: 0; /* Remove extra padding */
-  }
-  
- 
-  
-  .logoContainer {
-    display: inline-block;
-    margin-right: 10px; /* Adjust as needed */
-  }
-  
-  .brandText {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  .navLinks {
-    display: flex;
-    justify-content: space-evenly;
-     flex: 1;
-  flex-wrap: wrap; /* Wrap items when necessary to avoid overflow */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Adjust based on your design */
+  background-color: #fff; /* Background color */
+  z-index: 1000; /* Ensure it stays on top */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+}
+.navbar {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  font-family: 'Moonhouse', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #90f542;
+  display: flex;
   align-items: center;
-  }
-  
-  .navLink {
-    color: #7fe64c;
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin: 0 10px;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .dropdown {
-    position: relative;
-    margin-left: 1rem;
-    z-index: 1;
-  }
-  
-  .socialButton {
-    padding: 10px 20px;
-    background-color: #212121;
-    border: 1px solid #41f025;
-    border-radius: 5px;
-    color: #94f920;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    display: flex;
-    align-items: center;
-    z-index: 2;
-  } 
-  
-  .socialButtonHover {
-    background-color: #333;
-    transform: translateY(-2px);
-  }
-  
-  .dropdownMenu {
-    position: absolute;
-    top: 100%; /* Position below the button */
-    right: 0; /* Align to the right edge */
-    background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 999; /* Ensure the dropdown appears above the navbar */
-    width: 200px; /* Adjust as needed */
-  }
-  
-  .icon {
-    width: 2rem;
-    height: 2rem;
-    margin: 0.5rem;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .connectButtonContainer {
-    margin-left: 1rem;
-    margin-right: 3rem;
-  }
-  
-  .stressButton {
-    background: #000;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .stressIcon {
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
+}
+
+.klhLogo {
+  width: 70px;
+  height: 40px;
+  margin-right: 5px; /* Reduced the margin between the logo and text */
+  padding: 0; /* Remove extra padding */
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-right: 3rem;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logoContainer {
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed */
+}
+
+.brandText {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.dropdown {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.socialButton {
+  padding: 10px 20px;
+  background-color: #212121;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.socialButtonHover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.connectButtonContainer {
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+.stressButton {
+  background: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.stressIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  transition: transform 0.3s ease-in-out;
+}
