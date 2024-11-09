@@ -30,7 +30,8 @@
     "thirdweb": "^5.33.0",
     "viem": "2.x",
     "wagmi": "^2.10.9",
-    "web3": "^4.13.0"
+    "web3": "^4.13.0",
+    "web3club": "file:"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.1.2",
