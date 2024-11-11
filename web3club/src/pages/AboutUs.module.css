@@ -272,3 +272,51 @@
   border-radius: 70%;
   z-index: -1;
 }
+/* Add these styles to your existing CSS */
+
+.acknowledgments {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background-image: linear-gradient(120deg, #0f0011 0%, #f5576c 100%);
+  color: #ffffff;
+}
+
+.acknowledgments h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.acknowledgmentContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.principal,
+.skillingDean {
+  text-align: center;
+  max-width: 400px;
+}
+
+.acknowledgmentImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.principal h3,
+.skillingDean h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.principal p,
+.skillingDean p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
