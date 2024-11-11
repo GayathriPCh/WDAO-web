@@ -35,16 +35,18 @@
 }
 
 .team {
-  background-image: linear-gradient(120deg, #0f0011 0%, #f5576c 100%);
-  color: #ffffff;
+  background-image: linear-gradient(120deg, #ffffff 0%, #ffffff 100%);
+  color: #000000;
 }
 
 .mission h2, .team h2 {
+  color: #232323;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .mission p, .team p {
+  color: #232323;
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -108,9 +110,11 @@
 
 
 .flipCard {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   perspective: 1000px;
+  position: relative;
+
 }
 
 .flipCardInner {
@@ -174,7 +178,7 @@
 }
 .teamGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 0.3fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -223,14 +227,14 @@
 .flipCardInner,
 .flipCardFront,
 .flipCardBack {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
 }
 
 .flipCardFront img,
 .flipCardBack img {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
 }
 
 /* Responsive adjustments */
@@ -256,4 +260,15 @@
   .teamGrid {
     grid-template-columns: 1fr;
   }
+}
+.flipCard::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #000000, #b700ff);
+  border-radius: 70%;
+  z-index: -1;
 }

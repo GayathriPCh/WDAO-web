@@ -6,6 +6,16 @@ import sujith from '../assets/sujith.jpg';
 import niharika from '../assets/niharika.jpg';
 import manas from '../assets/manas.jpg';
 import gayathri from '../assets/gayathri.png';
+import hasritha from '../assets/hasritha.jpg';
+import thanmai from '../assets/thanmai.jpg';
+import manasBack from '../assets/manas-back.jpg';
+import gayathriBack from '../assets/gayathri-back.jpg';
+import sujithBack from '../assets/sujithBack.jpeg';
+import niharikaBack from '../assets/niharika-back.jpg';
+import shreyaBack from '../assets/shreya-back.jpg';
+import dileepBack from '../assets/dileep-back.jpg';
+import hasrithaBack from '../assets/hasritha-back.jpg';
+import thanmaiBack from '../assets/thanmai-back.jpg';
 const AboutUs: React.FC = () => {
   const teamMembers = [
     { name: "T.Manas", role: "President & Founder/Dev", image: manas, linkedin: "https://www.linkedin.com/in/t-manas-chakravarty-91958224b/", github: "https://github.com/tmanas06" },
@@ -14,8 +24,8 @@ const AboutUs: React.FC = () => {
     { name: "R Niharika", role: "Operations Manager", image: niharika, linkedin: "https://www.linkedin.com", github: "https://github.com" },
     { name: "Shreya", role: "Management Head", image: "https://avatars.githubusercontent.com/u/113188197?v=4", linkedin: "https://www.linkedin.com", github: "https://github.com" },
     { name: "Dileep", role: "Marketing & Social Media Head", image: "https://avatars.githubusercontent.com/u/113188197?v=4", linkedin: "https://www.linkedin.com", github: "https://github.com" },
-    { name: "Hasritha Reddy", role: "Marketing & Social Media Head 2", image: "https://avatars.githubusercontent.com/u/113188197?v=4", linkedin: "https://www.linkedin.com/in/krishna-swadeep/", github: "https://github.com" },
-    { name: "Thanmai", role: "Research Head", image: "https://avatars.githubusercontent.com/u/113188197?v=4", linkedin: "https://www.linkedin.com/in/siripurapu-snehitha-1b1742295/", github: "https://github.com" },
+    { name: "Hasritha Reddy", role: "Marketing & Social Media Head 2", image: hasritha, linkedin: "https://www.linkedin.com/in/krishna-swadeep/", github: "https://github.com" },
+    { name: "Thanmai", role: "Research Head", image: thanmai, linkedin: "https://www.linkedin.com/in/siripurapu-snehitha-1b1742295/", github: "https://github.com" },
   ];
 
   return (
