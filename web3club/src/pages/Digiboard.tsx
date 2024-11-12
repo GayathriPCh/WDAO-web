@@ -42,14 +42,17 @@ const events: Event[] = [
     name: "Aleph Zero India event at KLH",
     driveLink: "https://drive.google.com/example1",
     images: [
+      {url:"https://media.licdn.com/dms/image/v2/D4E22AQEY8Fi0rtzzwg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727422076565?e=1734566400&v=beta&t=Fs14zFmjhA4QiQuLh3GnwFZESceI-oofvMzCz4yu_64",description:"Honored principal with speakers and guests"},
+      { url: "https://media.licdn.com/dms/image/v2/D4E22AQHJgVBLUIwkbQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727422074203?e=1734566400&v=beta&t=ksN0N-QFsnkwGuoj7rc35Ao7Sl4QnhGIUq1lkmiwwak", description: "Honored principal falicitating Mr Rajashekar Makala" },
+
+      { url: "https://media.licdn.com/dms/image/v2/D4E22AQE8N9F_yzLRHw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727422073310?e=1734566400&v=beta&t=LxTUB-bFIPItua-FgWtYTDlyEr5ZLtJiNHj2S9lxXNw", description: "Honored principal felicitating Mr. Siv ram shastri Jonnalagadda" },
+      {url:"https://media.licdn.com/dms/image/v2/D5622AQGGjrf-fFZzww/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727931388093?e=1734566400&v=beta&t=N3IzeI-d0ejAvhaDzRGqytVjEA3eOoNyX9bfQn4USMQ",description:""},
+      {url:"https://media.licdn.com/dms/image/v2/D4E22AQGlRQFnN4u5tQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1727262835108?e=1734566400&v=beta&t=BdzKBhh2cXpBtTLHbfWy9iHqfy2zNsZPMlKDpQLTTSU",description:""},
       { url: "https://media.licdn.com/dms/image/v2/D4E22AQHjVu-TivUDzQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727422072360?e=1734566400&v=beta&t=zzQ8ROr-wL6mroY2nXDyHQUaDXO3vOFYzystgV4FrdA", description: "Aleph zero India leads with the Wallstreet DAO crew" },
-      { url: "https://media.licdn.com/dms/image/v2/D4E22AQHo4CIpAkrdcw/feedshare-shrink_1280/feedshare-shrink_1280/0/1727422068486?e=1734566400&v=beta&t=AvuT8cG73tSuFQ1m5NT04AQXOpr6kcC1IavjTZR3Mxo", description: "Mr Rajashekar Makala giving an intro on Aleph zero" },
       { url: "https://media.licdn.com/dms/image/v2/D4E22AQE4Eky_nxgaHw/feedshare-shrink_1280/feedshare-shrink_1280/0/1727422068508?e=1734566400&v=beta&t=-EBVERG-MVx9usQsm1r8ajVPLtTo7FZq_t415aXpPlU", description: "Mr Siv Ram Shastri explaining the common protocol" },
       { url: "https://media.licdn.com/dms/image/v2/D4E22AQEjZj5G0F5IVw/feedshare-shrink_1280/feedshare-shrink_1280/0/1727422068429?e=1734566400&v=beta&t=d2R5s7c3vbWFBqGM4at3bhJ2n7xqIIDAt3FKQramYac", description: "Mr Siv ram shastri going over the adoption of web3 over the years" },
       { url: "https://media.licdn.com/dms/image/v2/D4E22AQEoFB9PXd_0sg/feedshare-shrink_1280/feedshare-shrink_1280/0/1727422070595?e=1734566400&v=beta&t=HB6kvIs6bGNWIqiNqYsQCc4BQELLZTdG9o0v6M71ppo", description: "Mr Rajashekar Makala giving an intro on Aleph zero" },
-      { url: "https://media.licdn.com/dms/image/v2/D4E22AQHJgVBLUIwkbQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727422074203?e=1734566400&v=beta&t=ksN0N-QFsnkwGuoj7rc35Ao7Sl4QnhGIUq1lkmiwwak", description: "Mr Rajashekar Makala giving an intro on Aleph zero" },
-      { url: "https://media.licdn.com/dms/image/v2/D4E22AQE8N9F_yzLRHw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727422073310?e=1734566400&v=beta&t=LxTUB-bFIPItua-FgWtYTDlyEr5ZLtJiNHj2S9lxXNw", description: "Mr Rajashekar Makala giving an intro on Aleph zero" },
-      {url:"https://media.licdn.com/dms/image/v2/D4E22AQGlRQFnN4u5tQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1727262835108?e=1734566400&v=beta&t=BdzKBhh2cXpBtTLHbfWy9iHqfy2zNsZPMlKDpQLTTSU",description:""},
+     
 
       // Add more images as needed
     ]

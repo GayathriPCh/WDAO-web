@@ -45,11 +45,7 @@ const AboutUs: React.FC = () => {
             <h3>Our Principal</h3>
             <p>We extend our sincere gratitude to our esteemed Principal, <strong>Dr. A Ramakrishna</strong>, for his unwavering support and guidance in our endeavors.</p>
           </div>
-          <div className={styles.skillingDean}>
-            <img src="https://klh.edu.in/wp-content/uploads/2022/01/sravan.jpg" alt="Sr. Sravan Kumar Gunturi" className={styles.acknowledgmentImage} />
-            <h3>Special Thanks</h3>
-            <p>We would like to express our heartfelt thanks to our Skilling Dean, <strong>Sr. Sravan Kumar Gunturi</strong>, for his invaluable contributions and encouragement in our journey towards innovation in blockchain technology, by supporting us in establishing this club.</p>
-          </div>
+          
         </div>
       </section>
       <section className={styles.team}>
